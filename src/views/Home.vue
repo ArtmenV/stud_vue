@@ -1,16 +1,11 @@
 <template>
   <div class="home">
-    <h1>Dynamic CSS</h1>
-    <!-- <h2>Example</h2>
-    <div @click="available = !available" :class="{available}">
-      <span>Ryu</span>
-    </div>-->
-    <h2>Example 2</h2>
-    <button @click="nearby = !nearby">Toggle nearby</button>
-    <button @click="available = !available">Toggle available</button>
-    <div :class="compClasses">
-      <span>Ryu</span>
-    </div>
+    <ul>
+      <li v-for="(character, id) in characters" :key="id">{{character}}</li>
+    </ul>
+    <ul>
+      <li v-for="(ninja, id) in ninjas" :key="id">{{id +1}} - {{ninja.name}} - {{ninja.age}}</li>
+    </ul>
   </div>
 </template>
 
@@ -20,8 +15,13 @@ export default {
   name: "home",
   data() {
     return {
-      available: false,
-      nearby: false
+      name: "jack",
+      characters: ["Mario", "Luigi", "Yoshi", "Bowser"],
+      ninjas: [
+        { name: "Ryu", age: 25 },
+        { name: "Flipp", age: 35 },
+        { name: "Ken", age: 55 }
+      ]
     };
   },
   components: {
@@ -30,32 +30,12 @@ export default {
   methods: {
     logName() {}
   },
-  computed: {
-    compClasses() {
-      return {
-        available: this.available,
-        nearby: this.nearby
-      };
-    }
-  }
+  computed: {}
 };
 </script>
-<style lang="scss">
-span {
-  background: red;
-  display: inline-block;
-  padding: 10px;
-  color: #fff;
-  margin: 10px 0;
-}
-
-.available span {
-  background: green;
-}
-
-.nearby span:after {
-  content: "nearby";
-  margin-left: 10px;
+<style lang="scss" scoped>
+li {
+  list-style-type: none;
 }
 </style>
 
@@ -93,3 +73,42 @@ span {
     // <label>Age</label>
     // <input type="text" v-model="age" />
     // <span>{{age}}</span>
+
+    //  <h1>Dynamic CSS</h1>
+    // <!-- <h2>Example</h2>
+    // <div @click="available = !available" :class="{available}">
+    //   <span>Ryu</span>
+    // </div>-->
+    /*
+    <!--
+    // <h2>Example 2</h2>
+//     // <button @click="nearby = !nearby">Toggle nearby</button>
+//     // <button @click="available = !available">Toggle available</button>
+//     // <div :class="compClasses">
+//     //   <span>Ryu</span>
+//     // </div>
+
+// // span {
+// //   background: red;
+// //   display: inline-block;
+// //   padding: 10px;
+// //   color: #fff;
+// //   margin: 10px 0;
+// // }
+
+// // .available span {
+// //   background: green;
+// // }
+
+// // .nearby span:after {
+// //   content: "nearby";
+// //   margin-left: 10px;
+// // }*/-->
+
+//  <div class="home">
+//     <h1>Conditionals</h1>
+//     <button @click="error= !error">Toggle Error</button>
+//     <button @click="success= !success">Toggle Success</button>
+//     <p v-if="error">There has been an error</p>
+//     <p v-else-if="success">I'ts success</p>
+//   </div>
