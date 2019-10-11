@@ -1,8 +1,11 @@
 <template>
   <div class="home">
-    <p>Hello {{name}}</p>
-    <p>my {{surName}}</p>
-    <greetings></greetings>
+    <h1>Events</h1>
+    <button @click="subtract(1)">Subtract a Year</button>
+    <button @click="add(1)">Add a Year</button>
+    <button @dblclick="subtract(10)">Subtract a Year</button>
+    <button @dblclick="add(10)">Add a Year</button>
+    <p>My age is {{age}}</p>
   </div>
 </template>
 
@@ -12,17 +15,30 @@ export default {
   name: "home",
   data() {
     return {
-      name: "Artem",
-      surName: "Viliutich"
+      age: 0
     };
   },
   components: {
     greetings
   },
   methods: {
-    fullname() {
-      this.name + this.surName;
+    greet(sun) {
+      return "Good " + sun + " " + this.name;
+    },
+    subtract(dec) {
+      return (this.age -= dec);
+    },
+    add(inc) {
+      return (this.age += inc);
     }
   }
 };
 </script>
+
+    // <h1>{{greet('sunny')}}</h1>
+    // <h3>Name: {{name}}</h3>
+    // <h3>Job: {{job}}</h3>
+    // <a :href="website">The Net Ninja</a>
+    // <input type="text" v-bind:value="job" />
+    // <p v-html="websiteTag"></p>
+    // <greetings></greetings>
