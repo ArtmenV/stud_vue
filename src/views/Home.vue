@@ -1,16 +1,28 @@
 <template>
   <div class="home">
-    <h1>Hello {{name}}!</h1>
+    <p>Hello {{name}}</p>
+    <p>my {{surName}}</p>
+    <greetings></greetings>
   </div>
 </template>
 
 <script>
+import greetings from "./Greetings";
 export default {
   name: "home",
   data() {
     return {
-      name: "Viliutich Artem"
+      name: "Artem",
+      surName: "Viliutich"
     };
+  },
+  components: {
+    greetings
+  },
+  methods: {
+    fullname() {
+      this.name + this.surName;
+    }
   }
 };
 </script>
