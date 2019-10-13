@@ -1,16 +1,16 @@
 <template >
   <v-app>
     <header>
-      <v-toolbar dark class="head__bar">
+      <v-toolbar app dark class="indigo">
         <v-toolbar-title>
-          <router-link to="/" class="head__link">Title</router-link>
+          <router-link to="/" class="head__link white--text">Title</router-link>
         </v-toolbar-title>
 
         <div class="flex-grow-1"></div>
 
         <v-toolbar-items>
           <v-btn text v-for="(link, id) in linkMenu" :key="id">
-            <router-link class="head__link" :to="`${link.url}`">{{link.title}}</router-link>
+            <router-link class="head__link white--text" :to="`${link.url}`">{{link.title}}</router-link>
           </v-btn>
         </v-toolbar-items>
       </v-toolbar>
