@@ -1,7 +1,9 @@
 <template >
   <v-app>
     <header>
-      <v-toolbar app dark class="indigo">
+      <v-toolbar dark class="indigo">
+        <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+
         <v-toolbar-title>
           <router-link to="/" class="head__link white--text">Title</router-link>
         </v-toolbar-title>
@@ -13,6 +15,9 @@
             <router-link class="head__link white--text" :to="`${link.url}`">{{link.title}}</router-link>
           </v-btn>
         </v-toolbar-items>
+        <v-navigation-drawer app class="indigo" v-model="drawer">
+          <p>test</p>
+        </v-navigation-drawer>
       </v-toolbar>
     </header>
 
@@ -24,6 +29,7 @@
 export default {
   data() {
     return {
+      drawer: false,
       linkMenu: [
         { title: "Home", url: "/" },
         { title: "Login", url: "/login" },

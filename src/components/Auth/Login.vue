@@ -9,9 +9,9 @@
         <v-icon left>email</v-icon>
         <span>Email Me</span>
       </v-btn>-->
-      <v-btn fab depressed small class="indigo white--text">
+      <!-- <v-btn fab depressed small class="indigo white--text">
         <v-icon small>email</v-icon>
-      </v-btn>
+      </v-btn>-->
     </section>
   </div>
 </template>

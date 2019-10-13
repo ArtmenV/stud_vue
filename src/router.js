@@ -3,8 +3,6 @@ import Router from "vue-router";
 import Home from "./views/Home.vue";
 import Registration from "./components/Auth//Registration.vue";
 import Login from "./components/Auth//Login.vue";
-console.log(Login);
-console.log(Registration);
 
 Vue.use(Router);
 

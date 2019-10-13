@@ -1,9 +1,11 @@
 <template>
   <div class="container-wrapper">
     <section>
-      <div class="container">
-        <h1>Home</h1>
-      </div>
+      <h1>Home</h1>
+
+      <!-- <v-btn class="hidden-md-and-down">click me</v-btn> -->
+      <!-- <v-btn class="hidden-md-and-up">click me</v-btn> -->
+      <!-- <v-btn class="hidden-sm-only">Muk</v-btn> -->
     </section>
   </div>
 </template>
@@ -11,7 +13,9 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      drawer: false
+    };
   },
   name: "home"
 };
