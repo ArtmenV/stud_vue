@@ -5,7 +5,7 @@
         <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 
         <v-toolbar-title>
-          <router-link to="/" class="head__link white--text">Title</router-link>
+          <router-link to="/" class="head__link white--text">Artmen007</router-link>
         </v-toolbar-title>
 
         <div class="flex-grow-1"></div>
@@ -24,7 +24,7 @@
               <v-icon class="white--text">{{ link.icon }}</v-icon>
             </v-list-tile-action>
             <v-list-tile-content>
-              <v-list-tile-title class="white--text">{{ link.text }}</v-list-tile-title>
+              <v-list-tile-title class="white--text mx-4">{{ link.text }}</v-list-tile-title>
             </v-list-tile-content>
           </v-list-tile>
         </v-list>
