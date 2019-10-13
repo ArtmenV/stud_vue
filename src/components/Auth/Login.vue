@@ -2,7 +2,7 @@
   <div class="container-wrapper">
     <section>
       <div class="container">
-        <h1>Home</h1>
+        <h1>Login</h1>
       </div>
     </section>
   </div>
@@ -12,8 +12,7 @@
 export default {
   data() {
     return {};
-  },
-  name: "home"
+  }
 };
 </script>
 <style lang="scss" scoped>

@@ -1,40 +1,23 @@
 <template >
-  <div class="wrapper">
+  <v-app>
     <header>
-      <div id="app">
-        <v-app id="inspire">
-          <div>
-            <v-toolbar>
-              <v-toolbar-title>
-                <router-link to="/">Title</router-link>
-              </v-toolbar-title>
+      <v-toolbar dark class="head__bar">
+        <v-toolbar-title>
+          <router-link to="/" class="head__link">Title</router-link>
+        </v-toolbar-title>
 
-              <div class="flex-grow-1"></div>
+        <div class="flex-grow-1"></div>
 
-              <v-toolbar-items>
-                <v-btn text v-for="link in linkMenu" :key="link.title">
-                  <router-link :to="`${link.url}`">{{link.title}}</router-link>
-                </v-btn>
-              </v-toolbar-items>
-
-              <template v-if="$vuetify.breakpoint.smAndUp">
-                <v-btn icon>
-                  <v-icon>mdi-export-variant</v-icon>
-                </v-btn>
-                <v-btn icon>
-                  <v-icon>mdi-delete-circle</v-icon>
-                </v-btn>
-                <v-btn icon>
-                  <v-icon>mdi-plus-circle</v-icon>
-                </v-btn>
-              </template>
-            </v-toolbar>
-          </div>
-        </v-app>
-      </div>
+        <v-toolbar-items>
+          <v-btn text v-for="(link, id) in linkMenu" :key="id">
+            <router-link class="head__link" :to="`${link.url}`">{{link.title}}</router-link>
+          </v-btn>
+        </v-toolbar-items>
+      </v-toolbar>
     </header>
-    <div class="content-wrapper"></div>
-  </div>
+
+    <router-view></router-view>
+  </v-app>
 </template>
 
 <script>
@@ -47,12 +30,17 @@ export default {
         { title: "Registration", url: "/registration" }
       ]
     };
-  },
-
-  components: {}
+  }
 };
 </script >
 
-<style lang="scss">
+<style lang="scss" scoped>
+.v-application--wrap {
+  min-height: none;
+}
+.head__link {
+  text-decoration: none;
+  color: black !important;
+}
 </style>
  
